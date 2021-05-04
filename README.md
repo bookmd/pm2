@@ -1,3 +1,12 @@
+<h1>Hey dear Vimmers!</h1>
+<h2>Why does this library exist?</h2>
+Currently (May 4th, 2021) Workflow Integration Desktop uses pkg to turn node.js processes into .exe files. Sadly, pkg has a bug that causes it to break when packaging something the uses pm2, due to some bug with bash files. This weird fork removes the usage of the library that uses the bash file, so pkg doesn't break.
+This means we need to import our own version of pm2 and not the original one.
+
+You need to use the "git url" dependency of this fork in the original code instead of the regular "pm2" dependency.
+
+This change removes the usage of the package pm2-deploy - it will completely break "pm2 deploy" CLI, but we currently don't use it.
+
 <div align="center">
   <br/>
   <a href="http://pm2.keymetrics.io/" title="PM2 Keymetrics link">
